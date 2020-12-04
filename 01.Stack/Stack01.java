@@ -21,7 +21,8 @@ class Solution {
                 t.push(c);
             } else if (c == ')') {
                 // 如果是')'，那么就尝试弹栈
-                if (t.empty() || t.peek() != '(') {
+                if (t.empty()) {
+                    // 如果弹栈失败，那么返回false
                     return false;
                 }
                 t.pop();

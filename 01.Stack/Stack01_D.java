@@ -12,24 +12,24 @@ class Solution {
         }
 
         // 消除法的主要核心逻辑:
-        int leftBrachNumber = 0;
+        int leftBraceNumber = 0;
         for (int i = 0; i < s.length(); i++) {
             // 取出字符
             char c = s.charAt(i);
             if (c == '(') {
                 // 如果是'('，那么压栈
-                leftBrachNumber++;
+                leftBraceNumber++;
             } else if (c == ')') {
                 // 如果是')'，那么就尝试弹栈
-                if (leftBrachNumber <= 0) {
+                if (leftBraceNumber <= 0) {
                     // 如果弹栈失败，那么返回false
                     return false;
                 }
-                --leftBrachNumber;
+                --leftBraceNumber;
             }
         }
 
-        return leftBrachNumber == 0;
+        return leftBraceNumber == 0;
     }
 }
 

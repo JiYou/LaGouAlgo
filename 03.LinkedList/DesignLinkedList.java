@@ -44,7 +44,7 @@ class MyLinkedList {
         }
         return getPreNode(index).next.val;
     }
-    
+
     // 在链表的第一个元素之前添加一个值为 val 的节点。
     // 插入后，新节点将成为链表的第一个节点。
     public void addAtHead(int val) {
@@ -57,14 +57,14 @@ class MyLinkedList {
         }
         length++;
     }
-    
+
     // 将值为 val 的节点追加到链表的最后一个元素。
     public void addAtTail(int val) {
         tail.next = new ListNode(val);
         tail = tail.next;
         length++;
     }
-    
+
     // 在链表中的第 index 个节点之前添加值为 val  的节点。
     // 1. 如果 index 等于链表的长度，则该节点将附加到链表的末尾。
     // 2. 如果 index 大于链表长度，则不会插入节点。
@@ -86,7 +86,7 @@ class MyLinkedList {
         // NOTE: here tail has been changed
         length++;
     }
-    
+
     // 如果索引 index 有效，则删除链表中的第 index 个节点。
     public void deleteAtIndex(int index) {
         if (index < 0 || index >= length) {

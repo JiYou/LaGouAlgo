@@ -2,6 +2,9 @@
  * @lc app=leetcode.cn id=707 lang=java
  *
  * [707] 设计链表
+ *
+ * 测试平台链接：
+ * - https://leetcode-cn.com/problems/design-linked-list/
  */
 
 // @lc code=start

@@ -19,20 +19,18 @@
 */
 // 测试平台链接：https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/submissions/
 class Solution {
-    // 这里采用类似快排的思想来找一个数组中第k小的元素
-    // 这里采用的是三路快排的思路
-    int kth(vector<int> &A, int b, int e, int k) {
-
-        if (b >= e) {
+    private int kth(int[] a, int b, int e, int k) {
+        if (b >=e ) {
             return 0;
         }
-        if (b + 1 == e) {
-            return A[b];
+
+        // 递归结束，这个时候已经只有一个元素了
+        if ((b + 1) >= e) {
+            return a[b];
         }
 
-        // 首先找到一个数，将这个数组分成三个部分
-        int m = b + ((e-b)>>1);
-        const int x = A[m];
+        final int m = b + ((e-b) >> 1);
+        final int x = a[m];
 
         // 这里会有四个区间
         // [b, l)[l, i)[i, r](r..N)
@@ -42,12 +40,21 @@ class Solution {
         // (r...N)是大于x的数据的区间
         int l = b, i = b, r = e - 1;
         while (i <= r) {
-            if (A[i] < x) {
-                swap(A[l++], A[i++]);
-            } else if (A[i] == x) {
+            if (a[i] < x) {
+                // swap(a[l], a[i]);
+                int t = a[l];
+                a[l] = a[i];
+                a[i] = t;
+                i++;
+                l++;
+            } else if (a[i] == x) {
                 i++;
             } else {
-                swap(A[r--], A[i]);
+                // swap(a[r--], a[i]);
+                int t = a[r];
+                a[r] = a[i];
+                a[i] = t;
+                r--;
             }
         }
 
@@ -56,29 +63,31 @@ class Solution {
 
         // 如果kth在前面的那一部分
         if (l - b >= k) {
-            return kth(A, b, l, k);
+            return kth(a, b, l, k);
         }
 
         // 如果kth在中间等于x的那一部分
         if (i - b >= k) {
-            return A[l];
+            return a[l];
         }
 
         // 如果kth在大于x的那一部分
-        return kth(A, i, e, k - (i - b));
+        return kth(a, i, e, k - (i - b));
     }
-public:
-    vector<int> getLeastNumbers(vector<int>& A, int k) {
-        const int kthValue = kth(A, 0, A.size(), k);
+    public int[] getLeastNumbers(int[] arr, int k) {
+        final int kthValue = kth(arr, 0, arr.length, k);
         int kthValueCnt = 0;
 
-        vector<int> ans;
+        int[] ans = new int[k];
+        int idx = 0;
         // 首先将小于kth的那部分数放到ans里面。
-        for (auto x: A) {
+        for (int x: arr) {
             if (x < kthValue) {
-                ans.push_back(x);
+                ans[idx++] = x;
             }
-            kthValueCnt += x == kthValue;
+            if (x == kthValue) {
+                kthValueCnt++;
+            }
         }
 
         // 如果不足，那么并且有多余的，等于kthValue的元素
@@ -86,11 +95,11 @@ public:
         // 比如[1, 2, 2, 2, 2, 2, 2, 2, 2] k = 2
         // 前面的处理，只会把[1]放到ans里面。
         // 很明显，我们还需要把kthValue=2放到ans里面。
-        while (ans.size() < k && kthValueCnt > 0) {
-            ans.push_back(kthValue);
+        while (idx < k && kthValueCnt > 0) {
+            ans[idx++] = kthValue;
             kthValueCnt--;
         }
 
         return ans;
     }
-};
+}

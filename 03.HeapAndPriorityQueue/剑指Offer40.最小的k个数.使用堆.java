@@ -1,4 +1,4 @@
-
+// 测试平台链接： https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/
 class Solution {
     private int[] a = null;
     private int n = 0;

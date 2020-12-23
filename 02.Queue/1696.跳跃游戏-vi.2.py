@@ -59,8 +59,12 @@
 #
 
 # @lc code=start
-
 from collections import deque
+
+class Node:
+    def __init__(self, s, i):
+        self.sum = s
+        self.idx = i
 
 class Solution(object):
     def maxResult(self, A, k):
@@ -69,32 +73,39 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
-        # 处理掉各种边界条件!
-        if not A or len(A) == 0 or k <= 0:
-            return 0
 
-        # 单调队列，这里并不是严格递减
+        # 严格单调递减队列
+        # 里面存放的是每个位置可以收集到的金币以及下标index
         Q = deque()
 
-        # 每个位置可以收集到的金币数目
-        get = [0] * len(A)
+        # 走到i位置时，最大的金币收益
+        ans = 0
 
         for i in range(0, len(A)):
-            # 在取最大值之前，需要保证单调队列中都是有效值。
-            # 也就是都在区间里面的值
-            # 当要求get[i]的时候，
-            # 单调队列中应该是只能保存[i-k, i-1]这个范围的数
-            if i - k > 0:
-                if Q and Q[0] == get[i-k-1]:
-                    Q.popleft()
+            # 出队！
+            # 对于i而言，
+            # [i-k, i-1]可以跳到A[i]
+            # 最远i - (i - k) = k
+            # 因此超出这个范围的，必须要出队
+            while Q and i - Q[0].idx > k:
+                Q.popleft()
+            
+            # 获得在位置i时的收益
+            if Q:
+                ans = Q[0].sum + A[i]
+            else:
+                ans = A[i]
 
-            get[i] = (Q[0] + A[i]) if Q else A[i]
-
-            while Q and Q[-1] < get[i]:
+            # 入队，当A[i]入队的时候，要把小于等于他的那些
+            # 比他旧的给踢除掉
+            # 注意！这里使用的是严格的单调递减!
+            while Q and Q[-1].sum <= ans:
                 Q.pop()
-            Q.append(get[i])
-
-        return get[-1]
+            # 入队
+            Q.append(Node(ans, i))
+        
+        return ans
+    
 
 # @lc code=end
 

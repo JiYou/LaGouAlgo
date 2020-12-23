@@ -65,43 +65,45 @@
 using namespace std;
 
 // @lc code=start
-
 class Solution {
-public:
-    int maxResult(vector<int>& A, int k) {
-        // 数组里面元素的个数
+   public:
+    int maxResult(vector<int> &A, int k) {
         const int N = A.size();
+        // pair.first表示走到i位置最多收集的金币
+        // pair.second表示下标i
+        // Q是一个严格单调递减的队列
+        deque<pair<int, int>> Q;
 
-        // get[]数组，表示每个位置能够获得的金币数量
-        int get[N];
-
-        // 单调队列，注意，这里并不是严格单调
-        deque<int> Q;
+        // 走到i位置时，最大的金币收益
+        int ans = 0;
 
         for (int i = 0; i < N; i++) {
-            // 在取最大值之前，需要保证单调队列中都是有效值。
-            // 也就是都在区间里面的值
-            // 当要求get[i]的时候，
-            // 单调队列中应该是只能保存
-            if (i - k > 0) {
-                if (!Q.empty() && Q.front() == get[i-k-1]) {
-                    Q.pop_front();
-                }
+            // 出队！
+            // 对于i而言，
+            // [i-k, i-1]可以跳到A[i]
+            // 最远i - (i - k) = k
+            // 因此超出这个范围的，必须要出队
+            while (!Q.empty() && i - Q.front().second > k) {
+                Q.pop_front();
             }
 
-            // 从单调队列中取得较大值
-            int old = Q.empty() ? 0 : Q.front();
-            get[i] = old + A[i];
+            // 获得在位置i时的收益
+            if (!Q.empty()) {
+                ans = Q.front().first + A[i];
+            } else {
+                ans = A[i];
+            }
 
-            // 入队的时候，采用单调队列入队
-            while (!Q.empty() && Q.back() < get[i]) {
+            // 入队，当A[i]入队的时候，要把小于等于他的那些
+            // 收益比他低，又比他旧的给踢除掉
+            // 注意！这里使用的是严格的单调递减!
+            while (!Q.empty() && Q.back().first <= ans) {
                 Q.pop_back();
             }
-            Q.push_back(get[i]);
+            // 入队!
+            Q.emplace_back(ans, i);
         }
-
-        return get[N-1];
+        return ans;
     }
 };
-
 // @lc code=end

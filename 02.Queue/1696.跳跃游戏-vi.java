@@ -58,60 +58,47 @@
  * 
  */
 
-import java.util.ArrayDeque;
-
 // @lc code=start
+
 class Solution {
-    // 走到下标index = idx的记录
-    class Node {
-        // 累计取得的金币!
-        int sum = 0;
-        // 在index = idx的时候
-        // 取得的最大金币为sum
-        int idx = 0;
-
-        public Node(int s, int i) {
-            sum = s;
-            idx = i;
-        }
-    };
-
     public int maxResult(int[] A, int k) {
-        // 严格单调递减队列
-        // 里面存放的是每个位置可以收集到的金币以及下标index
-        ArrayDeque<Node> Q = new ArrayDeque<Node>();
+        // 处理掉各种边界条件!
+        if (A == null || A.length == 0 || k <= 0) {
+            return 0;
+        }
 
-        // 走到i位置时，最大的金币收益
-        int ans = 0;
+        final int N = A.length;
+        // 每个位置可以收集到的金币数目
+        int[] get = new int[N];
 
-        for (int i = 0; i < A.length; i++) {
-            // 出队！
-            // 对于i而言，
-            // [i-k, i-1]可以跳到A[i]
-            // 最远i - (i - k) = k
-            // 因此超出这个范围的，必须要出队
-            while (!Q.isEmpty() && i - Q.getFirst().idx > k) {
-                Q.removeFirst();
+        // 单调队列，这里并不是严格递减
+        ArrayDeque<Integer> Q = new ArrayDeque<Integer>();
+
+        for (int i = 0; i < N; i++) {
+            // 在取最大值之前，需要保证单调队列中都是有效值。
+            // 也就是都在区间里面的值
+            // 当要求get[i]的时候，
+            // 单调队列中应该是只能保存
+            if (i - k > 0) {
+                if (!Q.isEmpty() && Q.getFirst() == get[i-k-1]) {
+                    Q.removeFirst();
+                }
             }
 
-            // 获得在位置i时的收益
-            if (Q.isEmpty()) {
-                ans = A[i];
-            } else {
-                ans = Q.getFirst().sum + A[i];
-            }
+            // 从单调队列中取得较大值
+            int old = Q.isEmpty() ? 0 : Q.getFirst();
+            get[i] = old + A[i];
 
-            // 入队，当A[i]入队的时候，要把小于他的那些
-            // 收益比他低，又比他旧的给踢除掉
-            // 注意！这里使用的是严格的单调递减!
-            while (!Q.isEmpty() && Q.getLast().sum <= ans) {
+            // 入队的时候，采用单调队列入队
+            while (!Q.isEmpty() && Q.getLast() < get[i]) {
                 Q.removeLast();
             }
-
-            Q.addLast(new Node(ans, i));
+            Q.addLast(get[i]);
         }
 
-        return ans;
+        return get[N-1];
     }
 }
+
 // @lc code=end
+

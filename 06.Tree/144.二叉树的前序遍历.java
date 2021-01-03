@@ -1,11 +1,11 @@
 import javax.swing.tree.TreeNode;
 
 /*
- * @lc app=leetcode.cn id=144 lang=java
  *
  * [144] 二叉树的前序遍历
  *
  * https://leetcode-cn.com/problems/binary-tree-preorder-traversal/description/
+ * https://www.lintcode.com/problem/binary-tree-preorder-traversal/
  *
  * algorithms
  * Medium (66.89%)
@@ -36,7 +36,6 @@ import javax.swing.tree.TreeNode;
 import java.util.List;
 import java.util.ArrayList;
 
-// @lc code=start
 /**
  * Definition for a binary tree node. public class TreeNode { int val; TreeNode
  * left; TreeNode right; TreeNode(int x) { val = x; } }
@@ -56,4 +55,3 @@ class Solution {
         return ans;
     }
 }
-// @lc code=end

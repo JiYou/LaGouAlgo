@@ -1,9 +1,9 @@
 #
-# @lc app=leetcode.cn id=98 lang=python
 #
 # [98] 验证二叉搜索树
 #
 # https://leetcode-cn.com/problems/validate-binary-search-tree/description/
+# https://www.lintcode.com/problem/validate-binary-search-tree/
 #
 # algorithms
 # Medium (33.13%)
@@ -47,7 +47,6 @@
 # 
 #
 
-# @lc code=start
 # Definition for a binary tree node.
 # class TreeNode(object):
 #     def __init__(self, val=0, left=None, right=None):
@@ -78,5 +77,4 @@ class Solution(object):
         self.preOrder(root, float('-inf'), float('inf'))
         return self.ans
 
-# @lc code=end
 

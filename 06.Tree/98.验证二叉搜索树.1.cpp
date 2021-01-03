@@ -1,9 +1,9 @@
 /*
- * @lc app=leetcode.cn id=98 lang=cpp
  *
  * [98] 验证二叉搜索树
  *
  * https://leetcode-cn.com/problems/validate-binary-search-tree/description/
+ * https://www.lintcode.com/problem/validate-binary-search-tree/
  *
  * algorithms
  * Medium (33.13%)
@@ -47,7 +47,6 @@
  *
  */
 
-// @lc code=start
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -84,4 +83,3 @@ class Solution {
     }
 };
 
-// @lc code=end

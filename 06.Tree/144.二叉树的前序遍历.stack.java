@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /*
  *
  * [144] 二叉树的前序遍历
@@ -41,29 +43,18 @@ import javax.swing.tree.TreeNode;
  */
 class Solution {
     public List<Integer> preorderTraversal(TreeNode root) {
-        TreeNode cur = root;
+        Stack<TreeNode> s = new Stack<>();
         List<Integer> ans = new ArrayList<>();
-
-        while (cur != null) {
-            if (cur.left != null) {
-                TreeNode pre = cur.left;
-                while (pre.right != null && pre.right != cur) {
-                    pre = pre.right;
-                }
-                if (pre.right == null) {
-                    ans.add(cur.val);
-                    pre.right = cur;
-                    cur = cur.left;
-                } else {
-                    pre.right = null;
-                    cur = cur.right;
-                }
-            } else {
-                ans.add(cur.val);
-                cur = cur.right;
+        while (root != null || !s.empty()) {
+            while (root != null) {
+                ans.add(root.val);
+                s.push(root);
+                root = root.left;
             }
+            root = s.peek();
+            s.pop();
+            root = root.right;
         }
-
         return ans;
     }
 }

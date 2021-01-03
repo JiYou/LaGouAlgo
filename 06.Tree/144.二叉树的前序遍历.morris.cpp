@@ -1,9 +1,9 @@
 /*
- * @lc app=leetcode.cn id=144 lang=cpp
  *
  * [144] 二叉树的前序遍历
  *
  * https://leetcode-cn.com/problems/binary-tree-preorder-traversal/description/
+ * https://www.lintcode.com/problem/binary-tree-preorder-traversal/
  *
  * algorithms
  * Medium (66.89%)
@@ -31,7 +31,6 @@
  *
  */
 
-// @lc code=start
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -72,4 +71,3 @@ class Solution {
     }
 };
 
-// @lc code=end

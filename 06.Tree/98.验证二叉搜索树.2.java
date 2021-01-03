@@ -1,11 +1,11 @@
 import java.util.Stack;
 
 /*
- * @lc app=leetcode.cn id=98 lang=java
  *
  * [98] 验证二叉搜索树
  *
  * https://leetcode-cn.com/problems/validate-binary-search-tree/description/
+ * https://www.lintcode.com/problem/validate-binary-search-tree/
  *
  * algorithms
  * Medium (33.13%)
@@ -49,7 +49,6 @@ import java.util.Stack;
  * 
  */
 
-// @lc code=start
 /**
  * Definition for a binary tree node. public class TreeNode { int val; TreeNode
  * left; TreeNode right; TreeNode() {} TreeNode(int val) { this.val = val; }
@@ -101,4 +100,3 @@ class Solution {
         return true;
     }
 }
-// @lc code=end

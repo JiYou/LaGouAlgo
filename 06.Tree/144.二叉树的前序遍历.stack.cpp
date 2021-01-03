@@ -14,21 +14,21 @@
  * Testcase Example:  '[1,null,2,3]'
  *
  * 给定一个二叉树，返回它的 前序 遍历。
- *
+ * 
  * 示例:
- *
- * 输入: [1,null,2,3]
+ * 
+ * 输入: [1,null,2,3]  
  * ⁠  1
  * ⁠   \
  * ⁠    2
  * ⁠   /
- * ⁠  3
- *
+ * ⁠  3 
+ * 
  * 输出: [1,2,3]
- *
- *
+ * 
+ * 
  * 进阶: 递归算法很简单，你可以通过迭代算法完成吗？
- *
+ * 
  */
 
 /**
@@ -41,18 +41,9 @@
  * };
  */
 class Solution {
-    void preOrder(TreeNode *root, vector<int> &ans) {
-        if (root) {
-            ans.push_back(root->val);
-            preOrder(root->left, ans);
-            preOrder(root->right, ans);
-        }
-    }
+public:
+    vector<int> preorderTraversal(TreeNode* root) {
 
-   public:
-    vector<int> preorderTraversal(TreeNode *root) {
-        vector<int> ans;
-        preOrder(root, ans);
-        return ans;
     }
 };
+

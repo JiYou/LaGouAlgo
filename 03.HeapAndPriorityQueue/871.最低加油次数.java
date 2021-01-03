@@ -1,6 +1,5 @@
 
 /*
- * @lc app=leetcode.cn id=871 lang=java
  *
  * [871] 最低加油次数
  *
@@ -71,7 +70,6 @@
 import java.util.Queue;
 import java.util.PriorityQueue;
 
-// @lc code=start
 class Solution {
     public int minRefuelStops(int target, int startFuel, int[][] stations) {
         final int N = stations.length;
@@ -136,4 +134,3 @@ class Solution {
         return curPos + fuelLeft >= target ? addFuelTimes : -1;
     }
 }
-// @lc code=end

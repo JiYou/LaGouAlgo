@@ -1,5 +1,4 @@
 /*
- * @lc app=leetcode.cn id=1642 lang=java
  *
  * [1642] 可以到达的最远建筑
  *
@@ -70,7 +69,6 @@
 import java.util.Queue;
 import java.util.PriorityQueue;
 
-// @lc code=start
 class Solution {
     public int furthestBuilding(int[] heights, int bricks, int ladders) {
         // 注意处理非法输入
@@ -125,4 +123,3 @@ class Solution {
         return lastPos;
     }
 }
-// @lc code=end

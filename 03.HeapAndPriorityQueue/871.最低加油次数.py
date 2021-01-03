@@ -1,5 +1,4 @@
 #
-# @lc app=leetcode.cn id=871 lang=python
 #
 # [871] 最低加油次数
 #
@@ -68,7 +67,6 @@
 #
 
 
-# @lc code=start
 
 import Queue
 from Queue import PriorityQueue
@@ -142,5 +140,4 @@ class Solution(object):
 
         # 能到达target吗？如果能，返回加油次数，不能返回-1
         return addFuelTimes if curPos + fuelLeft >= target else -1
-# @lc code=end
 

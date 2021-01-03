@@ -1,5 +1,4 @@
 /*
- * @lc app=leetcode.cn id=622 lang=cpp
  *
  * [622] 设计循环队列
  *
@@ -65,7 +64,6 @@
 
 using namespace std;
 
-// @lc code=start
 class MyCircularQueue {
     // 队列的头部元素所在位置
     int front = 0;
@@ -133,4 +131,3 @@ class MyCircularQueue {
  * bool param_5 = obj->isEmpty();
  * bool param_6 = obj->isFull();
  */
-// @lc code=end

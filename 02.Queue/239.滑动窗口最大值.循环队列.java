@@ -1,5 +1,4 @@
 /*
- * @lc app=leetcode.cn id=239 lang=java
  *
  * [239] 滑动窗口最大值
  *
@@ -53,7 +52,6 @@
  * 
  */
 
-// @lc code=start
 class Solution {
     class Queue {
         private int cap = 0;
@@ -116,5 +114,4 @@ class Solution {
         return ans.stream().mapToInt(Integer::valueOf).toArray();
     }
 }
-// @lc code=end
 

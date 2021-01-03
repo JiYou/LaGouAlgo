@@ -1,5 +1,4 @@
 /*
- * @lc app=leetcode.cn id=707 lang=java
  *
  * [707] 设计链表
  *
@@ -7,7 +6,6 @@
  * - https://leetcode-cn.com/problems/design-linked-list/
  */
 
-// @lc code=start
 class MyLinkedList {
     // 实现单链表
     // 1. 假设链表中的所有节点都是 0-index的。
@@ -116,5 +114,4 @@ class MyLinkedList {
  * obj.addAtIndex(index,val);
  * obj.deleteAtIndex(index);
  */
-// @lc code=end
 

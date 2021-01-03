@@ -1,5 +1,4 @@
 /*
- * @lc app=leetcode.cn id=1696 lang=java
  *
  * [1696] 跳跃游戏 VI
  *
@@ -58,7 +57,6 @@
  * 
  */
 
-// @lc code=start
 
 class Solution {
     public int maxResult(int[] A, int k) {
@@ -100,5 +98,4 @@ class Solution {
     }
 }
 
-// @lc code=end
 

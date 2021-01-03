@@ -1,5 +1,4 @@
 /*
- * @lc app=leetcode.cn id=622 lang=java
  *
  * [622] 设计循环队列
  *
@@ -59,7 +58,6 @@
  * 
  */
 
-// @lc code=start
 class MyCircularQueue {
     // 队列的头部元素所在位置
     private int front = 0;
@@ -126,4 +124,3 @@ class MyCircularQueue {
     }
 }
 
-// @lc code=end

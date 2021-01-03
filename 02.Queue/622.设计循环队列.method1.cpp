@@ -1,5 +1,4 @@
 /*
- * @lc app=leetcode.cn id=622 lang=cpp
  *
  * [622] 设计循环队列
  *
@@ -63,7 +62,6 @@
 #include <vector>
 using namespace std;
 
-// @lc code=start
 class MyCircularQueue {
     // 已经使用的元素个数
     int used = 0;
@@ -152,4 +150,3 @@ class MyCircularQueue {
  * bool param_5 = obj->isEmpty();
  * bool param_6 = obj->isFull();
  */
-// @lc code=end

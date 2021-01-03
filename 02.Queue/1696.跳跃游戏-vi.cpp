@@ -1,5 +1,4 @@
 /*
- * @lc app=leetcode.cn id=1696 lang=cpp
  *
  * [1696] 跳跃游戏 VI
  *
@@ -64,7 +63,6 @@
 
 using namespace std;
 
-// @lc code=start
 
 class Solution {
 public:
@@ -104,4 +102,3 @@ public:
     }
 };
 
-// @lc code=end

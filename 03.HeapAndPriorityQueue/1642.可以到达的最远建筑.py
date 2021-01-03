@@ -1,5 +1,4 @@
 #
-# @lc app=leetcode.cn id=1642 lang=python
 #
 # [1642] 可以到达的最远建筑
 #
@@ -67,7 +66,6 @@
 # 
 #
 
-# @lc code=start
 import Queue
 from Queue import PriorityQueue
 
@@ -124,5 +122,4 @@ class Solution(object):
 
         return lastPos
 
-# @lc code=end
 

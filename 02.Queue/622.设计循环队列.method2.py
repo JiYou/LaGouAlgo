@@ -1,5 +1,4 @@
 #
-# @lc app=leetcode.cn id=622 lang=python
 #
 # [622] 设计循环队列
 #
@@ -59,7 +58,6 @@
 # 
 #
 
-# @lc code=start
 class MyCircularQueue(object):
     def __init__(self, k):
         """
@@ -146,5 +144,4 @@ class MyCircularQueue(object):
 # param_4 = obj.Rear()
 # param_5 = obj.isEmpty()
 # param_6 = obj.isFull()
-# @lc code=end
 

@@ -1,5 +1,4 @@
 /*
- * @lc app=leetcode.cn id=871 lang=cpp
  *
  * [871] 最低加油次数
  *
@@ -106,7 +105,6 @@ struct ListNode {
     ListNode(int x) : val(x), next(NULL) {}
 };
 
-// @lc code=start
 class Solution {
    public:
     int minRefuelStops(int target, int startFuel,
@@ -169,7 +167,6 @@ class Solution {
         return curPos + gasLeft >= target ? addGasTimes : -1;
     }
 };
-// @lc code=end
 
 int main(void) {
     Solution s;

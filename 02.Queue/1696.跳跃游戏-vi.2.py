@@ -1,5 +1,4 @@
 #
-# @lc app=leetcode.cn id=1696 lang=python
 #
 # [1696] 跳跃游戏 VI
 #
@@ -58,7 +57,6 @@
 # 
 #
 
-# @lc code=start
 from collections import deque
 
 class Node:
@@ -107,5 +105,4 @@ class Solution(object):
         return ans
     
 
-# @lc code=end
 

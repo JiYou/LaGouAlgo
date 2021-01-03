@@ -1,5 +1,4 @@
 /*
- * @lc app=leetcode.cn id=622 lang=java
  *
  * [622] 设计循环队列
  *
@@ -59,7 +58,6 @@
  * 
  */
 
-// @lc code=start
 
 class MyCircularQueue {
     // 已经使用的元素个数
@@ -159,4 +157,3 @@ class MyCircularQueue {
  * 
  * boolean param_6 = obj.isFull();
  */
-// @lc code=end

@@ -1,5 +1,4 @@
 #
-# @lc app=leetcode.cn id=239 lang=python
 #
 # [239] 滑动窗口最大值
 #
@@ -53,7 +52,6 @@
 # 
 #
 
-# @lc code=start
 
 class Queue(object):
     def __init__(self, cap):
@@ -107,5 +105,4 @@ class Solution(object):
         
         return ans
 
-# @lc code=end
 

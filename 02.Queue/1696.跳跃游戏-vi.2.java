@@ -1,5 +1,4 @@
 /*
- * @lc app=leetcode.cn id=1696 lang=java
  *
  * [1696] 跳跃游戏 VI
  *
@@ -60,7 +59,6 @@
 
 import java.util.ArrayDeque;
 
-// @lc code=start
 class Solution {
     // 走到下标index = idx的记录
     class Node {
@@ -114,4 +112,3 @@ class Solution {
         return ans;
     }
 }
-// @lc code=end

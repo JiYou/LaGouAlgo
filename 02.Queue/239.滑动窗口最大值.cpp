@@ -1,5 +1,4 @@
 /*
- * @lc app=leetcode.cn id=239 lang=cpp
  *
  * [239] 滑动窗口最大值
  *
@@ -59,7 +58,6 @@
 
 using namespace std;
 
-// @lc code=start
 class Solution {
     // 单调队列使用双端队列来实现
     deque<int> Q;
@@ -100,4 +98,3 @@ class Solution {
         return ans;
     }
 };
-// @lc code=end

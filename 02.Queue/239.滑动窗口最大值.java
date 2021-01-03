@@ -1,6 +1,5 @@
 
 /*
- * @lc app=leetcode.cn id=239 lang=java
  *
  * [239] 滑动窗口最大值
  *
@@ -57,7 +56,6 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
 
-// @lc code=start
 class Solution {
     // 单调队列使用双端队列来实现
     private ArrayDeque<Integer> Q = new ArrayDeque<Integer>();
@@ -99,4 +97,3 @@ class Solution {
         return ans.stream().mapToInt(Integer::valueOf).toArray();
     }
 }
-// @lc code=end

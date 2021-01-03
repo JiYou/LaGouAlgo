@@ -1,5 +1,4 @@
 /*
- * @lc app=leetcode.cn id=239 lang=cpp
  *
  * [239] 滑动窗口最大值
  *
@@ -58,7 +57,6 @@
 
 using namespace std;
 
-// @lc code=start
 
 class Queue {
    public:
@@ -118,4 +116,3 @@ class Solution {
         return ans;
     }
 };
-// @lc code=end

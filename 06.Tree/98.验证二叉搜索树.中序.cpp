@@ -1,5 +1,4 @@
 /*
- * @lc app=leetcode.cn id=98 lang=cpp
  *
  * [98] 验证二叉搜索树
  *
@@ -48,7 +47,6 @@
  * 
  */
 
-// @lc code=start
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -87,5 +85,4 @@ public:
         return ans;
     }
 };
-// @lc code=end
 

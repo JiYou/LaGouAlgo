@@ -1,10 +1,8 @@
 /*
- * @lc app=leetcode.cn id=20 lang=java
- *
+ * 测试平台链接：https://leetcode-cn.com/problems/valid-parentheses/
  * [20] 有效的括号
  */
 
-// @lc code=start
 class Solution {
     public boolean isValid(String s) {
         if (s == null || s.length() == 0) {
@@ -42,5 +40,4 @@ class Solution {
         return t.empty();
     }
 }
-// @lc code=end
 

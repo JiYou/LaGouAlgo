@@ -6,7 +6,7 @@ class Solution {
     // 结果数组
     int[] ans = new int[A.length];
     // 注意，栈中的元素记录的是下标
-    Stack<Integer> t = new Stack();
+    Stack<Integer> t = new Stack<>();
 
     for (int i = 0; i < A.length; i++) {
       final int x = A[i];

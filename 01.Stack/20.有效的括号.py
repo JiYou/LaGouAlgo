@@ -1,9 +1,8 @@
+# -*- coding: utf-8 -*-
 #
 #
 # [20] 有效的括号
 #
-
-
 
 class Solution(object):
     def isValid(self, s):

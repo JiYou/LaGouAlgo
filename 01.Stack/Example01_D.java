@@ -79,11 +79,12 @@ class UnitTest {
         testTwoChars();
         test3Chars();
         test4Chars();
+        testOther();
         System.out.println("test over");
     }
 }
 
-public class Stack01_D {
+public class Example01_D {
     public static void main(String[] argv) {
         UnitTest.run();
     }

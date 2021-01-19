@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 class Solution:
   def isValid(self, s):
     if not s or len(s) == 0:

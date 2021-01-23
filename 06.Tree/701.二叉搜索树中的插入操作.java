@@ -1,5 +1,4 @@
 /*
- * @lc app=leetcode.cn id=701 lang=java
  *
  * [701] 二叉搜索树中的插入操作
  *
@@ -58,7 +57,6 @@
  * 
  */
 
-// @lc code=start
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -89,5 +87,4 @@ class Solution {
         return root;
     }
 }
-// @lc code=end
 

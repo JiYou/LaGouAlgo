@@ -1,5 +1,4 @@
 #
-# @lc app=leetcode.cn id=701 lang=python
 #
 # [701] 二叉搜索树中的插入操作
 #
@@ -58,7 +57,6 @@
 # 
 #
 
-# @lc code=start
 # Definition for a binary tree node.
 # class TreeNode(object):
 #     def __init__(self, val=0, left=None, right=None):
@@ -81,5 +79,4 @@ class Solution(object):
         elif val > root.val:
             root.right = self.insertIntoBST(root.right, val)
         return root
-# @lc code=end
 

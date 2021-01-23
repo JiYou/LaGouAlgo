@@ -1,5 +1,4 @@
 /*
- * @lc app=leetcode.cn id=700 lang=cpp
  *
  * [700] 二叉搜索树中的搜索
  *
@@ -41,7 +40,6 @@
  * 
  */
 
-// @lc code=start
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -68,5 +66,4 @@ public:
         return nullptr;
     }
 };
-// @lc code=end
 

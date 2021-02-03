@@ -1,24 +1,19 @@
-// 测试平台: https://nanti.jisuanke.com/t/T1560
+// 测试平台: https://nanti.jisuanke.com/t/T1562
 import java.io.*;
 import java.util.*;
 
 public class Main {
-  static private int lowerBound(long[] A, int n, long target) {
+  static private int upperBound(long[] A, int n, long target) {
     int l = 0, r = n;
     while (l < r) {
       final int m = l + ((r - l) >> 1);
-      if (A[m] < target) {
+      if (A[m] <= target) {
         l = m + 1;
       } else {
         r = m;
       }
     }
     return l;
-  }
-
-  static private boolean binarySearch(long[] A, int n, long target) {
-    int l = lowerBound(A, n, target);
-    return l < n && A[l] == target;
   }
 
   public static void main(String args[]) throws Exception {
@@ -33,7 +28,8 @@ public class Main {
     Arrays.sort(A);
     for (int i = 0; i < m; i++) {
       long target = sc.nextLong();
-      System.out.println(binarySearch(A, n, target) ? "YES" : "NO");
+      int idx = upperBound(A, A.length, target);
+      System.out.println(idx == A.length ? -1 : A[idx]);
     }
   }
 }

@@ -3,20 +3,23 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
-  static private String binarySearch(long[] A, int n, long target) {
-      int l = 0, r = n;
-      while (l < r) {
-          final int m = l + ((r-l)>>1);
-          if (A[m] == target) {
-              return new String("YES");
-          }
-          if (A[m] < target) {
-              l = m + 1;
-          } else {
-              r = m;
-          }
+  static private int lowerBound(long[] A, int n, long target) {
+    int l = 0, r = n;
+    while (l < r) {
+      final int m = l + ((r-l)>>1);
+        if (A[m] < target) {
+          l = m + 1;
+        } else {
+          r = m;
+        }
       }
-      return new String("NO");
+      return l;
+  }
+
+  static private String binarySearch(long[] A, int n, long target) {
+      int l = lowerBound(A, n, target);
+      return (l < n && A[l] == target) ?
+          new String("YES") : new String("NO");
   }
 
   public static void main(String args[]) throws Exception {

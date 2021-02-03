@@ -2,20 +2,20 @@
 
 # 测试平台: https://nanti.jisuanke.com/t/T1560
 
-def binarySearch(A, target):
+def lowerBound(A, target):
     l = 0
     r = len(A) if A else 0
-    
     while l < r:
         m = l + ((r-l)>>1)
-        if (A[m] == target):
-            return True
-        elif (A[m] < target):
+        if (A[m] < target):
             l = m + 1
         else:
             r = m
-    
-    return False
+    return l
+
+def binarySearch(A, target):
+    l = lowerBound(A, target)
+    return True if l < len(A) and A[l] == target else False
 
 s = raw_input().split()
 n = int(s[0])

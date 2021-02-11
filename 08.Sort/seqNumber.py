@@ -35,7 +35,6 @@ class Solution(object):
 
             for i in range(b, e):
                 a[i] = t[i]
-        
         msort(nums, 0, len(nums), t, cnt)
 
         return cnt[0]

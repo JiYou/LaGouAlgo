@@ -1,4 +1,3 @@
-
 class Solution {
   void msort(vector<int> &a, int b, int e, vector<int> &t, int &cnt) {
     if (b >= e || b + 1 >= e) {

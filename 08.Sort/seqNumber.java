@@ -1,9 +1,4 @@
-// 不同的测试平台可能代码会有一些小修改
-// 测试链接:
-// https://leetcode-cn.com/problems/shu-zu-zhong-de-ni-xu-dui-lcof/submissions/
-// https://www.nowcoder.com/practice/96bd6684e04a44eb80e6a68efc0ec6c5?tpId=13
-// https://www.lintcode.com/problem/reverse-pairs/description
-
+// 顺序对
 class Solution {
   private int cnt = 0;
 

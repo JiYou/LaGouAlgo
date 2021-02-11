@@ -51,6 +51,10 @@ class Solution {
 public:
   int getNumberSameAsIndex(vector<int> &A) {
     auto p = getEqualRange(A);
+
+    // 这里我们已经找到的范围就是[p.first, p.second)
+    // 由于题意只要求随意返回相等的一个数就是可以了
+    // 所以这里我们就随便返回一个位置的数字就可以了
     if (p.first == p.second) {
       return -1;
     }

@@ -44,6 +44,10 @@ class Solution {
     }
     final int l = getLeftSide(A);
     final int r = getRightSide(A, l);
+
+    // 这里我们已经找到的范围就是[l, r)
+    // 由于题意只要求随意返回相等的一个数就是可以了
+    // 所以这里我们就随便返回一个位置的数字就可以了
     return l == r ? -1 : A[r-1];
   }
 };

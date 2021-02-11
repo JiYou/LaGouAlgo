@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # https://www.acwing.com/problem/content/65/
 class Solution(object):
     def findEqualRange(self, A):
@@ -42,7 +43,11 @@ class Solution(object):
         return [left, right]
 
     def getNumberSameAsIndex(self, A):
-        rs = self.findEqualRange(A)
+        rs = self.findEqualRange(A
+
+        #这里我们已经找到的范围就是[l, r)
+        #由于题意只要求随意返回相等的一个数就是可以了
+        #所以这里我们就随便返回一个位置的数字就可以了)
         if rs[0] == rs[1]:
             return -1
         # randomly pickup a euqal value to return.

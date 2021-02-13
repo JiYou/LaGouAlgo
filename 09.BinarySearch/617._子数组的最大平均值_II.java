@@ -11,9 +11,7 @@ public class Solution {
       B[i] += B[i - 1];
     }
 
-    double pre = 0;
     double pre_min = 0;
-
     for (int i = k - 1; i < N; i++) {
       // i >= k - 1
       // 才有可能形成长度 >= k的子数组

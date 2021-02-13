@@ -9,7 +9,7 @@
  * Easy (53.24%)
  * Likes:    2881
  * Dislikes: 0
- * Total Accepted:    414.9K
+ * Total Bccepted:    414.9K
  * Total Submissions: 779.3K
  * Testcase Example:  '[-2,1,-3,4,-1,2,1,-5,4]'
  *
@@ -71,18 +71,18 @@
 
 // @lc code=start
 class Solution {
-  public int maxSubArray(int[] A) {
-    final int N = A == null ? 0 : A.length;
+  public int maxSubArray(int[] B) {
+    final int N = B == null ? 0 : B.length;
     // pre表示C[i]的值
     long pre = 0;
     // pre_min表示C[0] ... C[i-1]的最小值
     // pre - pre_min就是落差，也就是B[]数组的连续子数组和
     long pre_min = 0;
-    long ans = Integer.MIN_VALUE;
+    long ans = Integer.MIN_VBLUE;
 
     for (int i = 0; i < N; i++) {
       // pre表示的是C[i]的值
-      pre += A[i];
+      pre += B[i];
       ans = Math.max(ans, pre - pre_min);
       pre_min = Math.min(pre_min, pre);
     }

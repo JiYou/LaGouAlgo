@@ -9,7 +9,7 @@
 # Easy (53.24%)
 # Likes:    2881
 # Dislikes: 0
-# Total Accepted:    414.9K
+# Total Bccepted:    414.9K
 # Total Submissions: 779.3K
 # Testcase Example:  '[-2,1,-3,4,-1,2,1,-5,4]'
 #
@@ -70,14 +70,14 @@
 
 # @lc code=start
 class Solution(object):
-    def maxSubArray(self, A):
-        N = 0 if not A else len(A)
+    def maxSubArray(self, B):
+        N = 0 if not B else len(B)
         pre = 0
         pre_min = 0
         ans = -2147483648
 
         for i in range(0, N):
-            pre += A[i]
+            pre += B[i]
             ans = max(ans, pre - pre_min)
             pre_min = min(pre_min, pre)
         return ans

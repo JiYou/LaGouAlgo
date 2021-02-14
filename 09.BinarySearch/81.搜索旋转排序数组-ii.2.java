@@ -1,61 +1,46 @@
 /*
- * @lc app=leetcode.cn id=33 lang=java
+ * @lc app=leetcode.cn id=81 lang=java
  *
- * [33] 搜索旋转排序数组
+ * [81] 搜索旋转排序数组 II
  *
- * https://leetcode-cn.com/problems/search-in-rotated-sorted-array/description/
+ * https://leetcode-cn.com/problems/search-in-rotated-sorted-array-ii/description/
  *
  * algorithms
- * Medium (40.44%)
- * Likes:    1176
+ * Medium (36.74%)
+ * Likes:    283
  * Dislikes: 0
- * Total Accepted:    219K
- * Total Submissions: 541.4K
- * Testcase Example:  '[4,5,6,7,0,1,2]\n0'
+ * Total Accepted:    52.9K
+ * Total Submissions: 143.9K
+ * Testcase Example:  '[2,5,6,0,0,1,2]\n0'
  *
- * 升序排列的整数数组 nums 在预先未知的某个点上进行了旋转（例如，
- * [0,1,2,4,5,6,7] 经旋转后可能变为 [4,5,6,7,0,1,2] ）。
- *
- * 请你在数组中搜索 target
- * ，如果数组中存在这个目标值，则返回它的索引，否则返回 -1 。
- *
- *
- *
- * 示例 1：
- *
- *
- * 输入：nums = [4,5,6,7,0,1,2], target = 0
- * 输出：4
- *
- *
- * 示例 2：
- *
- *
- * 输入：nums = [4,5,6,7,0,1,2], target = 3
- * 输出：-1
- *
- * 示例 3：
- *
- *
- * 输入：nums = [1], target = 0
- * 输出：-1
- *
- *
- *
- *
- * 提示：
- *
- *
- * 1
- * -10^4
- * nums 中的每个值都 独一无二
- * nums 肯定会在某个点上旋转
- * -10^4
- *
- *
+ * 假设按照升序排序的数组在预先未知的某个点上进行了旋转。
+ * 
+ * ( 例如，数组 [0,0,1,2,2,5,6] 可能变为 [2,5,6,0,0,1,2] )。
+ * 
+ * 编写一个函数来判断给定的目标值是否存在于数组中。若存在返回 true，否则返回 false。
+ * 
+ * 示例 1:
+ * 
+ * 输入: nums = [2,5,6,0,0,1,2], target = 0
+ * 输出: true
+ * 
+ * 
+ * 示例 2:
+ * 
+ * 输入: nums = [2,5,6,0,0,1,2], target = 3
+ * 输出: false
+ * 
+ * 进阶:
+ * 
+ * 
+ * 这是 搜索旋转排序数组 的延伸题目，本题中的 nums  可能包含重复元素。
+ * 这会影响到程序的时间复杂度吗？会有怎样的影响，为什么？
+ * 
+ * 
  */
 
 // @lc code=start
+
 // 映射的总体思路:
 //
 // 1. 如果x在数组左边，比如
@@ -81,7 +66,7 @@ class Solution {
   // 一个元素如果大于等于A[0] => 那么就在左边
   // 在边半部分的值更大，所以用1表示。
   // 0表示右边的部分值更小。
-  private boolean is_left(int[] A, int v) { return v >= A[0]; }
+  private boolean is_left(int[] A, int v) { return v > A[0]; }
 
   // 映射函数 => 返回A[m]与x的关系
   // {-1 = 小于； 0 = 相等； +1 = 大于x}
@@ -118,16 +103,23 @@ class Solution {
     return x_pos ? 1 : -1;
   }
 
-  public int search(int[] A, int x) {
+  public boolean search(int[] A, int x) {
     final int N = A == null ? 0 : A.length;
     if (N <= 0) {
-      return -1;
+      return false;
     }
 
     int l = 0, r = N;
 
     while (l < r) {
       final int m = l + ((r - l) >> 1);
+      if (A[l] == x || A[m] == x || A[r-1] == x) {
+          return true;
+      }
+      if (A[l] == A[m]) {
+          l++;
+          continue;
+      }
       final int mov = getC(A, m, x);
       if (mov < 0) {
         l = m + 1;
@@ -135,7 +127,9 @@ class Solution {
         r = m;
       }
     }
-    return (l >= N || A[l] != x) ? -1 : l;
+    return (l >= N || A[l] != x) ? false : true;
   }
 }
+
 // @lc code=end
+

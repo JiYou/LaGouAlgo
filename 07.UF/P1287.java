@@ -1,3 +1,4 @@
+//测试平台 http://poj.org/problem?id=1287
 import java.io.*;
 import java.util.*;
 

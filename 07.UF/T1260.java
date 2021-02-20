@@ -7,6 +7,7 @@ import java.io.*;
 import java.util.*;
 
 class Solution {
+  private int count = 0;
   private int[] F = null;
 
   private void Init(int n) {
@@ -14,6 +15,7 @@ class Solution {
     for (int i = 0; i <= n; i++) {
       F[i] = i;
     }
+    count = n;
   }
 
   private int Find(int x) {
@@ -25,6 +27,7 @@ class Solution {
   }
 
   private void Union(int x, int y) {
+    if (Find(x) != Find(y)) count--;
     F[Find(x)] = Find(y);
   }
 
@@ -35,20 +38,9 @@ class Solution {
       for (int i = 0; i < m; i++) {
           Union(conn[i][0], conn[i][1]);
       }
-      
-      // 一定要路径再压缩一次
-      // 否则如果出现没有压缩的情况，那么统计结果就不准确了
-      for (int i = 1; i <= n; i++) {
-          Find(i);
-      }
-      
+
       // 统计帮派里面帮主的个数
-      Set<Integer> s = new HashSet<>();
-      for (int i = 1; i <= n; i++) {
-        s.add(F[i]);
-      }
-      
-      return s.size();
+      return count;
   }
 }
 
